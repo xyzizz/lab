@@ -4,7 +4,7 @@ from pprint import pprint
 
 def download_highest_quality(youtube_url, output_path):
     # Download video and audio in the highest quality
-    youtube = YouTube(youtube_url)
+    youtube = YouTube(youtube_url, use_oauth=True, allow_oauth_cache=True)
     pprint(youtube.streams.all())
     video_itag = input("Enter the video itag")
     audio_itag = input("Enter the audio itag")
